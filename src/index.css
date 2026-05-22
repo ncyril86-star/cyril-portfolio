@@ -1,0 +1,385 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Hide scrollbar globally — outside @layer for full specificity */
+html,
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+html::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+:root {
+  --bg-page: #fffef9;
+  --bg-surface: #ffffff;
+  --bg-section-alt: #ebe4d6;
+  --bg-section-elevated: #ffffff;
+  --bg-footer: #121110;
+  --text-primary: #000000;
+  --text-body: #18181b;
+  --text-muted: #3f3f46;
+  --border-default: #a8a8b3;
+  --border-strong: #71717a;
+  --badge-ring: #fffef9;
+}
+
+.dark {
+  --bg-page: #08090d;
+  --bg-surface: #222a3d;
+  --bg-section-alt: #0f1219;
+  --bg-section-elevated: #1a2235;
+  --bg-footer: #030405;
+  --text-primary: #ffffff;
+  --text-body: #f0f0f3;
+  --text-muted: #c8c8d4;
+  --border-default: #4a5568;
+  --border-strong: #6b7a94;
+  --badge-ring: #08090d;
+}
+
+@theme {
+  --color-cream: var(--bg-page);
+  --color-surface: var(--bg-surface);
+  --color-coral: #ff6b6b;
+  --color-coral-dark: #ff8585;
+  --color-teal: #4ecdc4;
+  --color-yellow: #ffe66d;
+  --color-ink: var(--text-primary);
+  --color-body: var(--text-body);
+  --color-muted: var(--text-muted);
+  --color-border: var(--border-default);
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;          /* Firefox */
+    -ms-overflow-style: none;       /* IE / Edge */
+  }
+
+  html::-webkit-scrollbar {
+    display: none;                  /* Chrome / Safari */
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    /* Allow the document to scroll. This project expects the main page
+       to be scrollable (sticky sections rely on the document scroll
+       context). Previously this was `overflow: hidden` which prevents
+       sticky stacking from working correctly. */
+    overflow: auto;
+    font-family: var(--font-sans);
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  html.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  a[href],
+  button:not(:disabled),
+  [role="button"],
+  summary,
+  label[for] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      transition: none;
+    }
+
+    .typewriter-caret {
+      animation: none;
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes typewriter-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.typewriter-caret {
+  animation: typewriter-blink 0.85s step-end infinite;
+}
+
+@keyframes wave-hand {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(18deg);
+  }
+  75% {
+    transform: rotate(-12deg);
+  }
+}
+
+.wave-hand {
+  transform-origin: 70% 70%;
+  animation: wave-hand 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-hand {
+    animation: none;
+  }
+}
+
+/* Navbar — grey frosted glass */
+.nav-glass {
+  border: 1px solid #a1a1aa;
+  background: rgba(228, 228, 231, 0.92);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(16px) saturate(110%);
+  backdrop-filter: blur(16px) saturate(110%);
+}
+
+.dark .nav-glass {
+  border-color: #52525b;
+  background: rgba(63, 63, 70, 0.92);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.nav-glass-pill {
+  border: 1px solid #a1a1aa;
+  background: rgba(212, 212, 216, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.dark .nav-glass-pill {
+  border-color: #71717a;
+  background: rgba(82, 82, 91, 0.85);
+}
+
+/* ─── Parallax background layers ─── */
+/* Applied to the inner bg div that GSAP animates at a slower scroll speed */
+
+.bg-hero {
+  background:
+    radial-gradient(ellipse 120% 50% at 15% 60%, rgba(255, 107, 107, 0.45) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 60% at 85% 30%, rgba(78, 205, 196, 0.40) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 70% at 50% 100%, rgba(255, 230, 109, 0.35) 0%, transparent 55%),
+    var(--bg-page);
+}
+
+.bg-projects {
+  background:
+    radial-gradient(ellipse 130% 60% at 5% 30%, rgba(78, 205, 196, 0.40) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 70% at 95% 80%, rgba(255, 107, 107, 0.30) 0%, transparent 55%),
+    var(--bg-section-elevated);
+}
+
+.bg-work {
+  background:
+    radial-gradient(ellipse 120% 65% at 90% 20%, rgba(255, 107, 107, 0.40) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 60% at 10% 80%, rgba(255, 230, 109, 0.35) 0%, transparent 55%),
+    var(--bg-section-alt);
+}
+
+.bg-expertise {
+  background:
+    radial-gradient(ellipse 110% 70% at 50% 0%, rgba(255, 230, 109, 0.40) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 65% at 80% 90%, rgba(78, 205, 196, 0.35) 0%, transparent 55%),
+    var(--bg-section-elevated);
+}
+
+.bg-footer {
+  background:
+    radial-gradient(ellipse 110% 65% at 15% 40%, rgba(78, 205, 196, 0.20) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 60% at 85% 70%, rgba(255, 107, 107, 0.18) 0%, transparent 55%),
+    var(--bg-footer);
+}
+
+.section-hero {
+  background-color: var(--bg-page);
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.08);
+}
+
+.section-elevated {
+  background-color: var(--bg-section-elevated);
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.15);
+}
+
+.dark .section-elevated {
+  box-shadow: 0 -8px 48px rgba(0, 0, 0, 0.6);
+}
+
+.section-alt {
+  background-color: var(--bg-section-alt);
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.12);
+}
+
+.section-footer {
+  background-color: var(--bg-footer);
+  border-top: 1px solid var(--border-strong);
+  color: #f4f4f5;
+}
+
+.section-footer .text-ink,
+.section-footer h2 {
+  color: #fafafa;
+}
+
+.section-footer .text-body,
+.section-footer .text-muted {
+  color: #d4d4d8;
+}
+
+.section-card {
+  border: 2px solid var(--border-strong);
+  background-color: var(--bg-surface);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Experience timeline — vertical line + nodes */
+.experience-timeline {
+  --timeline-track: var(--border-default);
+}
+
+.dark .experience-timeline {
+  --timeline-track: var(--border-strong);
+}
+
+.experience-timeline {
+  border-color: var(--timeline-track);
+}
+
+.dark .section-card {
+  border-color: var(--border-strong);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}
+
+/* Softer hero blobs — avoid washing out content */
+.scene-backdrop {
+  background-image:
+    radial-gradient(circle at 15% 30%, rgba(255, 107, 107, 0.14), transparent 48%),
+    radial-gradient(circle at 80% 28%, rgba(78, 205, 196, 0.14), transparent 45%),
+    radial-gradient(circle at 50% 78%, rgba(255, 230, 109, 0.12), transparent 46%);
+  opacity: 0.9;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.dark .scene-backdrop {
+  background-image:
+    radial-gradient(circle at 15% 30%, rgba(255, 107, 107, 0.1), transparent 52%),
+    radial-gradient(circle at 80% 28%, rgba(78, 205, 196, 0.1), transparent 50%),
+    radial-gradient(circle at 50% 78%, rgba(255, 230, 109, 0.08), transparent 50%);
+  opacity: 0.7;
+}
+
+.scene-blob {
+  opacity: 0.35;
+  mix-blend-mode: normal;
+  will-change: transform;
+}
+
+.dark .scene-blob {
+  opacity: 0.2;
+}
+
+/* Project carousel — 3D cover-flow + card depth */
+.project-carousel-3d {
+  perspective: 900px;
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+}
+
+.project-carousel-3d.carousel-fits-all {
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+#projects {
+  overflow-x: clip;
+}
+
+.project-card-3d {
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card-3d__inner {
+  position: relative;
+  transform: translateZ(12px);
+  transform-style: preserve-3d;
+  border: 1px solid var(--border-default);
+  background: var(--bg-surface);
+  box-shadow: 0 6px 18px rgba(15, 15, 15, 0.08);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dark .project-card-3d__inner {
+  background: var(--bg-surface);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.project-card-3d:hover .project-card-3d__inner,
+.project-card-3d:focus-within .project-card-3d__inner {
+  transform: translateZ(28px) scale(1.02);
+}
+
+.dark .project-card-3d:hover .project-card-3d__inner,
+.dark .project-card-3d:focus-within .project-card-3d__inner {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card-3d,
+  .project-card-3d__inner {
+    transition: none;
+  }
+
+  .project-card-3d:hover .project-card-3d__inner,
+  .project-card-3d:focus-within .project-card-3d__inner {
+    transform: translateZ(20px);
+  }
+
+  .scene-backdrop,
+  .scene-blob {
+    transform: none !important;
+  }
+}
