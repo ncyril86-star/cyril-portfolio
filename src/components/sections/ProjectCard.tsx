@@ -55,9 +55,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article
       data-carousel-card
-      className="project-card-3d flex w-[calc(100vw-2.5rem)] max-w-[340px] shrink-0 snap-center sm:w-[300px]"
+      className="project-card-3d flex w-[min(92vw,22rem)] max-w-[22rem] shrink-0 snap-center sm:w-[300px] sm:max-w-[340px]"
     >
-      <div ref={innerRef} className="project-card-3d__inner will-change-transform transition-transform duration-200 ease-out flex w-full flex-col gap-3 rounded-2xl p-4">
+      <div ref={innerRef} className="project-card-3d__inner will-change-transform transition-transform duration-200 ease-out flex w-full flex-col gap-2.5 rounded-2xl p-3 sm:gap-3 sm:p-4">
         <div
           className={`relative overflow-hidden rounded-xl ${
             imageContain
@@ -77,7 +77,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <ProjectStatusBadge status={project.status} />
         </div>
 
-        <h3 className="font-display text-base font-bold leading-snug text-ink sm:text-[17px]">
+        <h3 className="font-display text-[15px] font-bold leading-snug text-ink sm:text-[17px]">
           {project.title}
         </h3>
 
