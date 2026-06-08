@@ -15,7 +15,7 @@ export function HeroSection() {
         <ProfileAvatar />
 
         <span className="inline-block rounded-full border-2 border-border bg-white px-4 py-2 text-sm font-bold text-ink shadow-[0_4px_14px_rgba(0,0,0,0.1)] dark:border-zinc-500 dark:bg-zinc-800 dark:text-white">
-          Available for work
+          Open to opportunities
         </span>
 
         <TypewriterHeading />
