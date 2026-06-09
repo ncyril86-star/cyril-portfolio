@@ -7,7 +7,7 @@ export function FooterSection() {
       className="section-footer px-3 py-16 sm:px-4 md:px-8 md:py-20"
       bgClassName="bg-footer"
       stack={true}
-      stackIndex={5}
+      stackIndex={6}
       compact={true}
     >
       <footer className="mx-auto w-full max-w-3xl text-center">

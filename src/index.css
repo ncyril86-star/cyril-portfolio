@@ -204,6 +204,13 @@ html::-webkit-scrollbar,
     var(--bg-page);
 }
 
+.bg-education {
+  background:
+    radial-gradient(ellipse 120% 65% at 15% 30%, rgba(255, 230, 109, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 60% at 85% 70%, rgba(255, 107, 107, 0.22) 0%, transparent 55%),
+    var(--bg-section-alt);
+}
+
 .bg-projects {
   background:
     radial-gradient(ellipse 130% 60% at 5% 30%, rgba(78, 205, 196, 0.40) 0%, transparent 55%),
@@ -251,6 +258,11 @@ html::-webkit-scrollbar,
   box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.12);
 }
 
+.section-journey {
+  background-color: var(--bg-section-alt);
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.1);
+}
+
 .section-footer {
   background-color: var(--bg-footer);
   border-top: 1px solid var(--border-strong);
@@ -276,6 +288,7 @@ html::-webkit-scrollbar,
 /* Experience timeline — vertical line + nodes */
 .experience-timeline {
   --timeline-track: var(--border-default);
+  --timeline-surface: var(--bg-section-alt);
 }
 
 .dark .experience-timeline {
@@ -284,6 +297,15 @@ html::-webkit-scrollbar,
 
 .experience-timeline {
   border-color: var(--timeline-track);
+}
+
+.experience-timeline--journey {
+  --timeline-track: rgba(255, 193, 7, 0.55);
+  --timeline-surface: var(--bg-section-alt);
+}
+
+.dark .experience-timeline--journey {
+  --timeline-track: rgba(255, 230, 109, 0.45);
 }
 
 .dark .section-card {

@@ -11,17 +11,27 @@ const accentStyles = {
     ring: "ring-teal/25",
     badge: "bg-teal/15 text-teal",
   },
+  yellow: {
+    dot: "bg-yellow",
+    ring: "ring-yellow/30",
+    badge: "bg-yellow/25 text-zinc-800 dark:text-yellow",
+  },
 } as const;
 
 interface ExperienceTimelineProps {
   items: Experience[];
+  variant?: "default" | "journey";
 }
 
-export function ExperienceTimeline({ items }: ExperienceTimelineProps) {
+export function ExperienceTimeline({ items, variant = "default" }: ExperienceTimelineProps) {
   const ordered = [...items].reverse();
+  const timelineClass =
+    variant === "journey"
+      ? "experience-timeline experience-timeline--journey"
+      : "experience-timeline";
 
   return (
-    <ol className="experience-timeline relative mt-8 border-l-2 border-border md:mt-10 md:ml-2">
+    <ol className={`${timelineClass} relative mt-8 border-l-2 md:mt-10 md:ml-2`}>
       {ordered.map((item, index) => {
         const accent = accentStyles[item.accent];
         const isLast = index === ordered.length - 1;
@@ -32,7 +42,7 @@ export function ExperienceTimeline({ items }: ExperienceTimelineProps) {
             className={`relative pl-7 sm:pl-9 ${isLast ? "pb-0" : "pb-10 md:pb-12"}`}
           >
             <span
-              className={`absolute -left-[9px] top-1.5 z-10 size-4 rounded-full border-[3px] border-[var(--bg-section-alt)] ring-4 ring-[var(--bg-section-alt)] ${accent.dot}`}
+              className={`absolute -left-[9px] top-1.5 z-10 size-4 rounded-full border-[3px] border-[var(--timeline-surface)] ring-4 ring-[var(--timeline-surface)] ${accent.dot}`}
               aria-hidden
             />
 

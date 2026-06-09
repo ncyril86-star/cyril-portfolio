@@ -9,7 +9,7 @@ export function ExpertiseSection() {
       className="section-elevated"
       bgClassName="bg-expertise"
       stack={true}
-      stackIndex={4}
+      stackIndex={5}
     >
       <div className="mx-auto max-w-5xl px-4 md:px-8">
         <SectionHeading title="Expertise" className="text-2xl md:text-3xl" />

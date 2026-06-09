@@ -8,6 +8,7 @@ type NavLink = {
 };
 
 const navLinks: NavLink[] = [
+  { label: "Education", href: "#education" },
   { label: "Project", href: "#projects" },
   { label: "Experience", href: "#work" },
   { label: "Expertise", href: "#expertise" },

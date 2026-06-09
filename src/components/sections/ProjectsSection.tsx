@@ -67,7 +67,7 @@ export function ProjectsSection() {
   };
 
   return (
-    <ScrollScene id="projects" className="section-elevated" bgClassName="bg-projects" stackIndex={2}>
+    <ScrollScene id="projects" className="section-elevated" bgClassName="bg-projects" stackIndex={3}>
       <div className="mx-auto max-w-7xl px-3 sm:px-4 md:px-8">
         <SectionHeading title="My Project" className="text-2xl md:text-3xl" />
 

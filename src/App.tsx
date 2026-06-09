@@ -1,4 +1,5 @@
 import { Nav } from "./components/layout/Nav";
+import { EducationSection } from "./components/sections/EducationSection";
 import { ExpertiseSection } from "./components/sections/ExpertiseSection";
 import { FooterSection } from "./components/sections/FooterSection";
 import { HeroSection } from "./components/sections/HeroSection";
@@ -14,6 +15,7 @@ export default function App() {
       {/* Stacking container — needs enough height for all sticky panels */}
       <main>
         <HeroSection />
+        <EducationSection />
         <ProjectsSection />
         <WorkSection />
         <ExpertiseSection />

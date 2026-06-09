@@ -18,7 +18,7 @@ export interface Experience {
   company: string;
   period: string;
   description: string;
-  accent: "coral" | "teal";
+  accent: "coral" | "teal" | "yellow";
 }
 
 export interface SkillGroup {
