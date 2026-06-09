@@ -100,12 +100,12 @@ export function Nav() {
         </div>
 
         {open ? (
-          <div className="absolute left-2 right-2 top-full mt-2 flex flex-col gap-1 rounded-2xl p-3 md:hidden bg-zinc-100/30 dark:bg-zinc-900/40 border border-zinc-200/10 dark:border-zinc-800/30 backdrop-blur-sm">
+          <div className="absolute left-2 right-2 top-full mt-2 flex flex-col gap-1 rounded-2xl p-3 md:hidden bg-white/90 dark:bg-zinc-900/95 border border-zinc-200/60 dark:border-zinc-700/60 backdrop-blur-md shadow-lg">
             {navLinks.map((link) => (
               <NavAnchor
                 key={link.href}
                 link={link}
-                className="rounded-xl px-4 py-3 text-sm font-semibold text-ink transition hover:bg-zinc-400/50 dark:text-white dark:hover:bg-zinc-600/50"
+                className="rounded-xl px-4 py-3 text-sm font-semibold text-zinc-800 transition hover:bg-zinc-100 dark:text-white dark:hover:bg-zinc-700/60"
                 onNavigate={() => setOpen(false)}
               />
             ))}
