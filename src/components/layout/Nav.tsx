@@ -69,7 +69,7 @@ export function Nav() {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-4 py-3 md:px-6 md:py-4">
         <nav
-          className="pointer-events-auto relative mx-auto flex max-w-2xl items-center justify-between rounded-full px-3 py-2 backdrop-blur-md bg-zinc-200/25 dark:bg-zinc-900/38 border border-zinc-300/25 dark:border-zinc-800/38 shadow-sm"
+          className="pointer-events-auto relative mx-auto flex max-w-4xl items-center justify-between rounded-full px-3 py-2 backdrop-blur-md bg-zinc-200/25 dark:bg-zinc-900/38 border border-zinc-300/25 dark:border-zinc-800/38 shadow-sm"
         aria-label="Main navigation"
       >
         <a href="#hero" className="font-display text-lg font-bold text-ink dark:text-white">
