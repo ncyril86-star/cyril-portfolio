@@ -24,7 +24,7 @@ export function HeroSection() {
           Hi, I&apos;m Cyril Anak Raymond, a final year Bachelor of Computer Science with Honours
           (Network Engineering) student at Universiti Malaysia Sabah.
           <span className="mt-3 block">
-          I am currently completing my internship actively seeking full-time graduate or 
+          I am currently completing my internship and actively seeking full-time graduate or 
           entry-level opportunities in Software Engineering, Test Development, IoT, IT Support, as well as mobile or web development roles in Sarawak, 
           Sabah, or remote environments.
           </span>
