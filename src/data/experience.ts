@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     id: "ehailing",
     role: "Part-Time E-Hailing Driver",
-    company: "-",
+    company: "",
     period: "2022 — 2026",
     description:
       "Conducted part-time e-hailing services while pursuing studies at Universiti Malaysia Sabah. Developed strong communication and interpersonal skills through daily interactions with passengers",
@@ -23,7 +23,7 @@ export const experiences: Experience[] = [
     id: "waiter",
     role: "Restaurant Waiter",
     company: "Piato Miri",
-    period: "2024",
+    period: "2019",
     description:
       "Worked as a waiter in a restaurant, providing attentive and friendly customer service in a fast-paced environment. Developed strong communication, teamwork, and customer service skills through daily interactions with guests.",
     accent: "teal",
