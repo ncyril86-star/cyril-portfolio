@@ -206,17 +206,17 @@ html::-webkit-scrollbar,
 
 .bg-education {
   background:
-    radial-gradient(ellipse 130% 70% at 10% 20%, rgba(255, 220, 80, 0.50) 0%, transparent 55%),
-    radial-gradient(ellipse 110% 65% at 90% 80%, rgba(255, 180, 50, 0.30) 0%, transparent 55%),
-    radial-gradient(ellipse 80% 80% at 50% 50%, rgba(255, 240, 160, 0.20) 0%, transparent 60%),
-    #fdf8e1;
+    radial-gradient(ellipse 130% 70% at 10% 20%, rgba(255, 100, 100, 0.40) 0%, transparent 55%),
+    radial-gradient(ellipse 110% 65% at 90% 80%, rgba(220, 60, 60, 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 80% at 50% 50%, rgba(255, 180, 180, 0.15) 0%, transparent 60%),
+    #fff0f0;
 }
 
 .dark .bg-education {
   background:
-    radial-gradient(ellipse 130% 70% at 10% 20%, rgba(180, 140, 0, 0.30) 0%, transparent 55%),
-    radial-gradient(ellipse 110% 65% at 90% 80%, rgba(160, 110, 0, 0.20) 0%, transparent 55%),
-    #1a1600;
+    radial-gradient(ellipse 130% 70% at 10% 20%, rgba(180, 40, 40, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 110% 65% at 90% 80%, rgba(140, 20, 20, 0.25) 0%, transparent 55%),
+    #1a0000;
 }
 
 .bg-projects {
@@ -267,12 +267,12 @@ html::-webkit-scrollbar,
 }
 
 .section-journey {
-  background-color: #fdf8e1;
+  background-color: #fff0f0;
   box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.1);
 }
 
 .dark .section-journey {
-  background-color: #1a1600;
+  background-color: #1a0000;
 }
 
 .section-footer {
@@ -312,13 +312,13 @@ html::-webkit-scrollbar,
 }
 
 .experience-timeline--journey {
-  --timeline-track: rgba(200, 155, 10, 0.55);
-  --timeline-surface: #fdf8e1;
+  --timeline-track: rgba(220, 60, 60, 0.55);
+  --timeline-surface: #fff0f0;
 }
 
 .dark .experience-timeline--journey {
-  --timeline-track: rgba(255, 230, 109, 0.45);
-  --timeline-surface: #1a1600;
+  --timeline-track: rgba(255, 120, 120, 0.45);
+  --timeline-surface: #1a0000;
 }
 
 .dark .section-card {
