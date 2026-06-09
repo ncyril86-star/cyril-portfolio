@@ -22,10 +22,11 @@ export function HeroSection() {
 
         <p className="mx-auto w-full max-w-3xl text-center text-base font-semibold leading-relaxed text-body md:text-lg">
           Hi, I&apos;m Cyril Anak Raymond, a final year Bachelor of Computer Science with Honours
-          (Network Engineering) student at Universiti Malaysia Sabah.I am currently completing my internship, which will end on 28 August 2026, and I am actively seeking full-time opportunities in Software Engineering, Test Development, IoT, and IT Support.
-          <span className="mt-2 block">
-            Seeking graduate or entry-level opportunities in Sarawak, Sabah, or remote
-            environments in mobile or web development.
+          (Network Engineering) student at Universiti Malaysia Sabah.
+          <span className="mt-3 block">
+          I am currently completing my internship, which will end on 28 August 2026, and I am actively seeking full-time graduate or 
+          entry-level opportunities in Software Engineering, Test Development, IoT, IT Support, as well as mobile or web development roles in Sarawak, 
+          Sabah, or remote environments.
           </span>
         </p>
       </div>
