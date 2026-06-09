@@ -5,18 +5,18 @@ export const educationPath: Experience[] = [
     id: "spm",
     role: "SPM (Sijil Pelajaran Malaysia)",
     company: "Secondary School",
-    period: "2017",
+    period: "2015 - 2019",
     description:
-      "Completed secondary education with a focus on science and mathematics, building a foundation for further studies in computing and technology.",
+      "Completed secondary education before continuing into the Matriculation program.",
     accent: "yellow",
   },
   {
     id: "foundation",
-    role: "Foundation in Science",
-    company: "Universiti Malaysia Sabah",
-    period: "2021",
+    role: "Matriculation",
+    company: "Negeri Sembilan Matriculation College",
+    period: "2020 - 2021",
     description:
-      "Prepared for degree-level studies through core science and mathematics modules before entering the computer science programme.",
+      "Completed Matriculation program with a focus on physical science and mathematics, building a foundation for further studies in computing and technology.",
     accent: "yellow",
   },
   {
@@ -25,7 +25,7 @@ export const educationPath: Experience[] = [
     company: "Universiti Malaysia Sabah",
     period: "2022 — 2026",
     description:
-      "Final-year student developing skills in full-stack web development, networking, and software engineering through coursework and practical projects.",
+      "Final-year student developing skills in full-stack web development, networking, and software engineering through coursework and practical projects. Hands-on experience with multiple database, software, and IoT projects.",
     accent: "coral",
   },
 ];
