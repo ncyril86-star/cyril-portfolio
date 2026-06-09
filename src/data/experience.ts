@@ -2,6 +2,15 @@ import type { Experience } from "../types";
 
 export const experiences: Experience[] = [
   {
+    id: "waiter",
+    role: "Restaurant Waiter",
+    company: "Piato Miri",
+    period: "2019",
+    description:
+      "Worked as a waiter in a restaurant, providing attentive and friendly customer service in a fast-paced environment. Developed strong communication, teamwork, and customer service skills through daily interactions with guests.",
+    accent: "teal",
+  },
+  {
     id: "ehailing",
     role: "Part-Time E-Hailing Driver",
     company: "",
@@ -17,15 +26,6 @@ export const experiences: Experience[] = [
     period: "2024",
     description:
       "Handling parcel delivery and pickup operations in a timely and efficient manner. Developed a strong sense of responsibility by ensuring timely and accurate delivery of parcels.",
-    accent: "teal",
-  },
-  {
-    id: "waiter",
-    role: "Restaurant Waiter",
-    company: "Piato Miri",
-    period: "2019",
-    description:
-      "Worked as a waiter in a restaurant, providing attentive and friendly customer service in a fast-paced environment. Developed strong communication, teamwork, and customer service skills through daily interactions with guests.",
     accent: "teal",
   },
   {
